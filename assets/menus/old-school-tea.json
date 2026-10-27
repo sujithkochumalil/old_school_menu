@@ -1,0 +1,84 @@
+{
+  "id": "old-school-tea",
+  "name": "Old School Tea",
+  "tagline": "Chaya, coffee and snacks, the old school way",
+  "logo": "",
+  "address": "",
+  "phone": "",
+  "opens": "07:00",
+  "closes": "22:00",
+  "currency": "₹",
+  "categories": [
+    {
+      "id": "chaya",
+      "name": "Chaya",
+      "icon": "tea",
+      "items": [
+        { "id": "classic-chaya", "name": "Classic Chaya", "desc": "Kerala-style milk tea, pulled high for a frothy top", "price": 15, "veg": true, "tag": "Bestseller", "image": "https://images.unsplash.com/photo-1792143663827-c77f1c1f2d71?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "masala-chai", "name": "Masala Chai", "desc": "Milk tea brewed with warm whole spices", "price": 25, "veg": true, "image": "https://images.unsplash.com/photo-1636920272028-c27f1ae474c3?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "ginger-chai", "name": "Ginger Chai", "desc": "Strong tea with crushed fresh ginger", "price": 20, "veg": true, "image": "https://images.unsplash.com/photo-1606695889004-f7850b9bfb81?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "tulsi-chai", "name": "Tulsi Chai", "desc": "Light, soothing tea with holy basil", "price": 25, "veg": true, "image": "https://images.unsplash.com/photo-1708658767790-8029f20906ac?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "kadak-chai", "name": "Kadak Chai", "desc": "Extra strong, slow boiled milk tea", "price": 20, "veg": true, "image": "https://images.unsplash.com/photo-1611312410928-bdcb480e6239?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "cutting-chai", "name": "Cutting Chai", "desc": "Half glass of strong chai for a quick break", "price": 12, "veg": true, "image": "https://images.unsplash.com/photo-1720875733075-fd8494df7908?w=600&h=600&fit=crop&q=70&fm=jpg" }
+      ]
+    },
+    {
+      "id": "tea-specials",
+      "name": "Tea Specials",
+      "icon": "special",
+      "items": [
+        { "id": "rose-latte", "name": "Rose Latte", "desc": "Milk tea with a gentle rose flavour", "price": 45, "veg": true, "image": "https://images.unsplash.com/photo-1744920666512-506c732c20f3?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "caramel-tea", "name": "Caramel Tea", "desc": "Milk tea finished with caramel", "price": 45, "veg": true, "image": "https://images.unsplash.com/photo-1583836632332-53825ce55a03?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "chocolate-chai", "name": "Chocolate Chai", "desc": "Chai blended with rich chocolate", "price": 50, "veg": true, "image": "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "spicy-iced-chai", "name": "Spicy Iced Chai", "desc": "Chilled spiced chai poured over ice", "price": 60, "veg": true, "tag": "New", "image": "https://images.unsplash.com/photo-1761673930163-8d3d6d73cd7a?w=600&h=600&fit=crop&q=70&fm=jpg" }
+      ]
+    },
+    {
+      "id": "hot-lattes",
+      "name": "Hot Lattes",
+      "icon": "coffee",
+      "items": [
+        { "id": "filter-coffee", "name": "Filter Coffee", "desc": "South Indian filter coffee, strong and frothy", "price": 30, "veg": true, "image": "https://images.unsplash.com/photo-1758387941825-a6ecaec9c14d?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "nescafe-latte", "name": "Nescafe Latte", "desc": "Classic instant coffee latte", "price": 50, "veg": true, "image": "https://images.unsplash.com/photo-1593443320739-77f74939d0da?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "hazelnut-latte", "name": "Hazelnut Latte", "desc": "Espresso, steamed milk and hazelnut", "price": 70, "veg": true, "tag": "Bestseller", "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "vanilla-latte", "name": "Vanilla Latte", "desc": "Smooth latte with vanilla", "price": 70, "veg": true, "image": "https://images.unsplash.com/photo-1758205080201-b1abf57e96af?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "irish-latte", "name": "Irish Latte", "desc": "Latte with Irish cream flavour (non-alcoholic)", "price": 75, "veg": true, "image": "https://images.unsplash.com/photo-1506372023823-741c83b836fe?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "butterscotch-latte", "name": "Butterscotch Latte", "desc": "Latte with buttery butterscotch", "price": 75, "veg": true, "image": "https://images.unsplash.com/photo-1761783768352-e7f42bfa9988?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "caramel-latte", "name": "Caramel Latte", "desc": "Latte with caramel sauce", "price": 75, "veg": true, "image": "https://images.unsplash.com/photo-1780683072483-81ee520613ae?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "mocha-latte", "name": "Mocha Latte", "desc": "Coffee and chocolate with steamed milk", "price": 80, "veg": true, "image": "https://images.unsplash.com/photo-1512035986687-f3cc6aefba8d?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "popcorn-latte", "name": "Popcorn Latte", "desc": "Latte with a sweet popcorn flavour", "price": 80, "veg": true, "image": "https://images.unsplash.com/photo-1621135177072-57c9b6242e7a?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "french-fusion-latte", "name": "French Fusion Latte", "desc": "House special French vanilla style latte", "price": 80, "veg": true, "image": "https://images.unsplash.com/photo-1760175445000-0e01e193d1cd?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "cheesecake-delight-latte", "name": "Cheesecake Delight Latte", "desc": "Creamy latte with a cheesecake flavour", "price": 85, "veg": true, "image": "https://images.unsplash.com/photo-1760306081298-93e10f2be897?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "rose-lavender-latte", "name": "Rose Lavender Latte", "desc": "Floral latte with rose and lavender", "price": 85, "veg": true, "image": "https://images.unsplash.com/photo-1592014367553-81823f044689?w=600&h=600&fit=crop&q=70&fm=jpg" }
+      ]
+    },
+    {
+      "id": "cold-coffee",
+      "name": "Cold Coffee",
+      "icon": "cold",
+      "items": [
+        { "id": "hazelnut-hurricane", "name": "Hazelnut Hurricane", "desc": "Thick cold coffee with hazelnut", "price": 110, "veg": true, "tag": "Bestseller", "image": "https://images.unsplash.com/photo-1553787499-6f9133860278?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "vanilla-twist", "name": "Vanilla Twist", "desc": "Cold coffee with vanilla", "price": 100, "veg": true, "image": "https://images.unsplash.com/photo-1764298490445-6add12301888?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "irish-carnival", "name": "Irish Carnival", "desc": "Cold coffee with Irish cream flavour (non-alcoholic)", "price": 110, "veg": true, "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "butterscotch-cold-coffee", "name": "Butterscotch Cold Coffee", "desc": "Cold coffee with butterscotch", "price": 110, "veg": true, "image": "https://images.unsplash.com/photo-1644203541701-0c534473e616?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "caramel-serenade", "name": "Caramel Serenade", "desc": "Cold coffee with caramel drizzle", "price": 110, "veg": true, "image": "https://images.unsplash.com/photo-1546470427-0d4db154ceb7?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "popcorn-zephyr", "name": "Popcorn Zephyr", "desc": "Cold coffee with sweet popcorn flavour", "price": 120, "veg": true, "available": false, "image": "https://images.unsplash.com/photo-1569186600496-67c1790a889f?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "chocolate-drift", "name": "Chocolate Drift", "desc": "Chocolate cold coffee", "price": 120, "veg": true, "image": "https://images.unsplash.com/photo-1653122025865-5e75e63cf4ba?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "french-rhythm", "name": "French Rhythm", "desc": "Cold coffee with French vanilla", "price": 120, "veg": true, "image": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "cold-cookie-cadence", "name": "Cold Cookie Cadence", "desc": "Cold coffee blended with cookies", "price": 130, "veg": true, "image": "https://images.unsplash.com/photo-1559275117-d096eb5d85b2?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "tiramisu-tempest", "name": "Tiramisu Tempest", "desc": "Cold coffee with a tiramisu flavour", "price": 140, "veg": true, "tag": "New", "image": "https://images.unsplash.com/photo-1726039468346-2f3e0f1f5b52?w=600&h=600&fit=crop&q=70&fm=jpg" }
+      ]
+    },
+    {
+      "id": "snacks",
+      "name": "Snacks",
+      "icon": "snack",
+      "items": [
+        { "id": "chicken-cutlet", "name": "Chicken Cutlet", "desc": "Crispy fried chicken cutlet", "price": 30, "veg": false, "tag": "Bestseller", "image": "https://images.unsplash.com/photo-1607116675044-6932fe5f252e?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "chicken-samosa", "name": "Chicken Samosa", "desc": "Crisp samosa with spiced chicken filling", "price": 25, "veg": false, "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "steamed-momos", "name": "Steamed Momos", "desc": "Soft steamed momos served with dips", "price": 80, "veg": true, "image": "https://images.unsplash.com/photo-1694923450868-b432a8ee52aa?w=600&h=600&fit=crop&q=70&fm=jpg" },
+        { "id": "cream-bun", "name": "Cream Bun", "desc": "Soft bun filled with sweet cream", "price": 25, "veg": true, "image": "https://images.unsplash.com/photo-1786805853634-2116c27f5863?w=600&h=600&fit=crop&q=70&fm=jpg" }
+      ]
+    }
+  ]
+}
