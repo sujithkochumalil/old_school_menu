@@ -1,13 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 
+import 'firebase_options.dart';
 import 'screens/menu_screen.dart';
 import 'theme/app_theme.dart';
 
 const defaultRestaurant = 'old-school-tea';
 
-void main() {
+Future<void> main() async {
   usePathUrlStrategy();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MenuApp());
 }
 

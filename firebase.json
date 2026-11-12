@@ -11,5 +11,17 @@
         "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
       }
     ]
+  },
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "old-school-tea-menu",
+          "configurations": {
+            "web": "1:1058303778479:web:6aebdbbb47b8820c34be5a"
+          }
+        }
+      }
+    }
   }
 }

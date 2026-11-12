@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Restaurant {
   final String id;
   final String name;
@@ -23,19 +25,22 @@ class Restaurant {
     required this.categories,
   });
 
-  factory Restaurant.fromJson(Map<String, dynamic> json) {
-    final categories = json['categories'] as List? ?? [];
+  factory Restaurant.fromFirestore(
+    DocumentSnapshot<Map<String, dynamic>> doc,
+    List<MenuCategory> categories,
+  ) {
+    final data = doc.data() ?? {};
     return Restaurant(
-      id: json['id'] ?? '',
-      name: json['name'] ?? '',
-      tagline: json['tagline'] ?? '',
-      logo: json['logo'] ?? '',
-      address: json['address'] ?? '',
-      phone: json['phone'] ?? '',
-      opens: json['opens'] ?? '',
-      closes: json['closes'] ?? '',
-      currency: json['currency'] ?? '₹',
-      categories: categories.map((c) => MenuCategory.fromJson(c)).toList(),
+      id: doc.id,
+      name: data['name'] ?? '',
+      tagline: data['tagline'] ?? '',
+      logo: data['logo'] ?? '',
+      address: data['address'] ?? '',
+      phone: data['phone'] ?? '',
+      opens: data['opens'] ?? '',
+      closes: data['closes'] ?? '',
+      currency: data['currency'] ?? '₹',
+      categories: categories,
     );
   }
 
@@ -55,22 +60,28 @@ class MenuCategory {
   final String id;
   final String name;
   final String icon;
+  final int sortOrder;
   final List<MenuItem> items;
 
   MenuCategory({
     required this.id,
     required this.name,
     required this.icon,
+    this.sortOrder = 0,
     required this.items,
   });
 
-  factory MenuCategory.fromJson(Map<String, dynamic> json) {
-    final items = json['items'] as List? ?? [];
+  factory MenuCategory.fromFirestore(
+    DocumentSnapshot<Map<String, dynamic>> doc,
+    List<MenuItem> items,
+  ) {
+    final data = doc.data() ?? {};
     return MenuCategory(
-      id: json['id'] ?? '',
-      name: json['name'] ?? '',
-      icon: json['icon'] ?? '',
-      items: items.map((i) => MenuItem.fromJson(i)).toList(),
+      id: doc.id,
+      name: data['name'] ?? '',
+      icon: data['icon'] ?? '',
+      sortOrder: _int(data['sortOrder']),
+      items: items,
     );
   }
 }
@@ -84,6 +95,8 @@ class MenuItem {
   final bool available;
   final String tag;
   final String image;
+  final String categoryId;
+  final int sortOrder;
 
   MenuItem({
     required this.id,
@@ -94,18 +107,24 @@ class MenuItem {
     required this.available,
     required this.tag,
     required this.image,
+    required this.categoryId,
+    required this.sortOrder,
   });
 
-  factory MenuItem.fromJson(Map<String, dynamic> json) {
+  factory MenuItem.fromFirestore(DocumentSnapshot<Map<String, dynamic>> doc) {
+    final data = doc.data() ?? {};
+    final price = data['price'];
     return MenuItem(
-      id: json['id'] ?? '',
-      name: json['name'] ?? '',
-      desc: json['desc'] ?? '',
-      price: json['price'] ?? 0,
-      veg: json['veg'] ?? true,
-      available: json['available'] ?? true,
-      tag: json['tag'] ?? '',
-      image: json['image'] ?? '',
+      id: doc.id,
+      name: data['name'] ?? '',
+      desc: data['desc'] ?? '',
+      price: price is num ? price : 0,
+      veg: data['veg'] ?? true,
+      available: data['available'] ?? true,
+      tag: data['tag'] ?? '',
+      image: data['image'] ?? '',
+      categoryId: data['categoryId'] ?? '',
+      sortOrder: _int(data['sortOrder']),
     );
   }
 
@@ -114,6 +133,8 @@ class MenuItem {
     return '$currency${price.toStringAsFixed(2)}';
   }
 }
+
+int _int(Object? value) => value is num ? value.toInt() : 0;
 
 int? _minutes(String time) {
   final parts = time.split(':');

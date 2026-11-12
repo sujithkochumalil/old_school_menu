@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -33,6 +35,7 @@ class _MenuScreenState extends State<MenuScreen> {
   final Map<String, GlobalKey> _sectionKeys = {};
   final Map<String, GlobalKey> _chipKeys = {};
 
+  StreamSubscription<Restaurant?>? _sub;
   Restaurant? _menu;
   bool _loading = true;
   String? _error;
@@ -45,40 +48,44 @@ class _MenuScreenState extends State<MenuScreen> {
   void initState() {
     super.initState();
     _scroll.addListener(_onScroll);
-    _load();
+    _listen();
   }
 
   @override
   void dispose() {
+    _sub?.cancel();
     _scroll.dispose();
     _chipScroll.dispose();
     _search.dispose();
     super.dispose();
   }
 
-  Future<void> _load() async {
-    try {
-      final menu = await MenuService.load(widget.restaurantId);
-      if (!mounted) return;
-      setState(() {
-        _menu = menu;
-        _loading = false;
-      });
-    } catch (_) {
-      if (!mounted) return;
-      setState(() {
-        _error = 'Please check your internet and try again.';
-        _loading = false;
-      });
-    }
+  void _listen() {
+    _sub = MenuService.watch(widget.restaurantId).listen(
+      (menu) {
+        setState(() {
+          _menu = menu;
+          _loading = false;
+          _error = null;
+        });
+        WidgetsBinding.instance.addPostFrameCallback((_) => _onScroll());
+      },
+      onError: (_) {
+        setState(() {
+          _error = 'Please check your internet and try again.';
+          _loading = false;
+        });
+      },
+    );
   }
 
   void _retry() {
+    _sub?.cancel();
     setState(() {
       _loading = true;
       _error = null;
     });
-    _load();
+    _listen();
   }
 
   void _onSearch(String value) {
